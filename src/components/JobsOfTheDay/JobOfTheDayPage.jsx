@@ -62,9 +62,6 @@ export default function JobOfTheDayPage() {
                     delay: 5000,
                     disableOnInteraction: false,
                 }}
-                pagination={{
-                    clickable: true,
-                }}
                 breakpoints={{
                     320: {
                         slidesPerView: 1,
