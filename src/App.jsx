@@ -1,5 +1,6 @@
 import Header from "./components/Header";
 import JobOfTheDayPage from "./components/JobsOfTheDay/JobOfTheDayPage";
+import Login from "./components/Login/Login";
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       <Header />
       <main>
         <JobOfTheDayPage/>
+        <Login></Login>
       </main>
     </section>
   );
