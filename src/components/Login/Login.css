@@ -1,0 +1,79 @@
+.login {
+    /* border: 2px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 5vw;
+}
+
+.containerLogin {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    border-radius: 20px;
+    width: 24vw;
+    height: 70vh;
+    border: 1px solid #9FA1A1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.containerLogin > button {
+    background-color: #3C787E;
+    width: 18vw;
+    height: 7vh;
+    border-radius: 15px;
+    border: none;
+    color: white;
+}
+
+.containerLogin .loginForgotPassword {
+    font-weight: 200;
+    color: black;
+}
+
+.containerLogin .loginRegister {
+    font-weight: 200;
+}
+
+.containerLogin .loginRegister .loginRegisterLink {
+    color: #3C787E;
+    font-weight: 600;
+}
+
+.loginTitle {
+}
+
+.loginField {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 11vh;
+    /* border: 2px solid red; */
+    width: 20vw;
+}
+
+.loginField .loginLabel {
+    /* border: 2px solid red; */
+}
+
+.loginField .inputContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* border: 2px solid red; */
+    border-radius: 9px;
+    background-color: #F1F1F1;
+}
+
+.loginField .inputContainer > img {
+    width: 1.3vw;
+}
+
+.loginField .inputContainer > input {
+    width: 15vw;
+    height: 5.4vh;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}

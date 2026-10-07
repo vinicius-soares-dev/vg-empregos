@@ -1,14 +1,14 @@
 import Header from "./components/Header";
-import JobCard from "./components/JobCard";
+import JobOfTheDayPage from "./components/JobsOfTheDay/JobOfTheDayPage";
+import Login from "./components/Login/Login";
 
 function App() {
   return (
     <section>
       <Header />
       <main>
-        <JobCard />
-        <JobCard />
-        <JobCard />
+        <JobOfTheDayPage/>
+        <Login></Login>
       </main>
     </section>
   );

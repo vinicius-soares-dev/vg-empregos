@@ -1,0 +1,133 @@
+.jobCard {
+    width: 25vw;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    border: 1px solid #9FA1A1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 22px;
+}
+
+.jobCard .imgEnterprise {
+    width: 8vw;
+}
+
+.jobCard .infoJob {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #777;
+    font-size: 20px;
+}
+
+.jobCard .infoJob>img {
+    width: 2vw;
+    padding-right: 1vw;
+}
+
+.jobCard>button {
+    background-color: #3C787E;
+    width: 16vw;
+    height: 7vh;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+
+    .jobCard {
+        width: 40vw;
+        height: 55vh;
+        border-radius: 20px;
+    }
+
+    .jobCard .imgEnterprise {
+        width: 12vw;
+    }
+
+    .jobCard .infoJob {
+        width: 25vw;
+        font-size: 18px;
+    }
+
+    .jobCard .infoJob>img {
+        width: 3vw;
+    }
+
+    .jobCard>button {
+        width: 25vw;
+        height: 6vh;
+    }
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    .jobCard {
+        width: 85vw;
+        height: auto;
+        min-height: 55vh;
+        padding: 25px 15px;
+        box-sizing: border-box;
+        border-radius: 18px;
+    }
+
+    .jobCard .imgEnterprise {
+        width: 25vw;
+        max-width: 100px;
+    }
+
+    .jobCard h2 {
+        font-size: 22px;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .jobCard .infoJob {
+        width: 70vw;
+        max-width: 280px;
+        font-size: 17px;
+    }
+
+    .jobCard .infoJob>img {
+        width: 6vw;
+        max-width: 28px;
+    }
+
+    .jobCard>button {
+        width: 70vw;
+        max-width: 280px;
+        height: 55px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .jobCard {
+        width: 90vw;
+        min-height: 52vh;
+    }
+
+    .jobCard h2 {
+        font-size: 20px;
+    }
+
+    .jobCard .infoJob {
+        font-size: 16px;
+    }
+
+    .jobCard>button {
+        width: 75vw;
+    }
+}
