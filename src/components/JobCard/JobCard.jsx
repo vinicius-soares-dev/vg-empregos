@@ -5,22 +5,26 @@ import group from "../../Assets/ProfileImage.png"
 //css
 import './jobCard.css'
 
-
+const VagasDia = () => {
+  return (
+    <h2>Vagas do dia</h2>
+  )
+}
 const JobCard = ({ infoCard }) => {
   return (
-    <section className="jobCard">
-      <img className="imgEnterprise" src={enterpriseImage} alt="" />
-      <h2>{infoCard.title}</h2>
-      <div className="infoJob">
-        <img src={moneyImage} alt="" />
-        <p>R${infoCard.salary}</p>
-      </div>
-      <div className="infoJob">
-        <img src={group} alt="" />
-        <p>{infoCard.location}</p>
-      </div>
-      <button>Candidatar-se</button>
-    </section>
+        <section className="jobCard">
+          <img className="imgEnterprise" src={enterpriseImage} alt="" />
+          <h2>{infoCard.title}</h2>
+          <div className="infoJob">
+            <img src={moneyImage} alt="" />
+            <p>R${infoCard.salary}</p>
+          </div>
+          <div className="infoJob">
+            <img src={group} alt="" />
+            <p>{infoCard.location}</p>
+          </div>
+          <button>Candidatar-se</button>
+        </section>
   );
 };
 

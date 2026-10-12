@@ -1,5 +1,6 @@
 import passWIcon from '../../Assets/passwordIcon.png'
 import user from '../../Assets/User.png'
+import { Link } from 'react-router-dom'
 
 import './Login.css'
 
@@ -43,9 +44,9 @@ export default function Login() {
 
                 <p className="loginRegister">
                     Não tem uma conta?
-                    <a className="loginRegisterLink" href="">
+                    <Link className="loginRegisterLink" to="/register">
                         Cadastre-se
-                    </a>
+                    </Link>
                 </p>
             </div>
         </section>
