@@ -1,0 +1,112 @@
+.login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding-top: 1.5rem;
+    font-family: monteserrat, sans-serif;
+    color: rgba(0, 0, 0, 0.7);
+
+}
+
+.containerLogin {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 420px;
+    height: 70vh;
+    border: 1px solid #9FA1A1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.containerLogin > button {
+    background-color: #3C787E;
+    width: 100%;
+    height: 48px;
+    border-radius: 15px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: 0.5rem;
+}
+
+.containerLogin > button:hover{
+    background-color: #316267;
+}
+
+.containerLogin .loginForgotPassword {
+    color: rgba(0, 0, 0, 0.7);
+    text-decoration: none;
+    font-size: 0.85rem;
+    margin-top: -0.2rem;
+}
+
+.containerLogin .loginForgotPassword:hover{
+    text-decoration: underline;
+}
+
+.containerLogin .loginRegister {
+    font-weight: 300;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;    
+}
+
+.containerLogin .loginRegister .loginRegisterLink {
+    color: rgba(60, 120, 126, 1);
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 0.3rem;
+}
+
+.containerLogin .loginRegister .loginRegisterLink:hover{
+    text-decoration: underline;
+}
+
+.loginTitle {
+    font-size: 1.75rem;
+    font-weight: 700;
+    font-style: bold;
+    color: rgba(0, 0, 0, 0.77);
+
+}
+
+.loginField {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    color: rgba(0, 0, 0, 0.77);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.loginField .inputContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: 1px solid rgba(0, 0, 0, 0.65);
+    border-radius: 9px;
+    background-color: #ffffff;
+    width: 100%;
+}
+
+.loginField .inputContainer > img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    opacity: 0.7;
+}
+
+.loginField .inputContainer > input {
+    width: 100%;
+    height: 48px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 1rem;
+}
+
+

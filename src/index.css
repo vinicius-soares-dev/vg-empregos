@@ -4,11 +4,36 @@
 }
 
 .cabecalho {
-  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 20px;
+  align-items: center;
+}
+
+.btn-login {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: 1px solid rgba(197, 160, 89, 1);width: 77px;
+  height: 46px;
+  padding: 10px;
+  border-radius: 10px;
+  border-width: 2px;
+  color:rgba(197, 160, 89, 1);
+  font-family: monteserrat, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  cursor: pointer;
 }
 
 #title-header {
-  color: red;
+  color: rgba(0, 0, 0, 0.76);
+  font-family: Montserrat, sans-serif;
+  font-weight: 300;
+  font-style: Light;
+  font-size: 60px;
 }
 
 .title {

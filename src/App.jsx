@@ -1,32 +1,24 @@
+import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import JobOfTheDayPage from "./components/JobsOfTheDay/JobOfTheDayPage";
 import Login from "./components/Login/Login";
+import Register from "./components/Register/register";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <section>
       <Header />
       <main>
-        <JobOfTheDayPage/>
-        <Login></Login>
+        <Routes>
+          <Route path="/" element={<JobOfTheDayPage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
       </main>
+      <Footer />
     </section>
   );
 }
 
 export default App;
-
-/*
-  Header - cabeçalho
-  p - paragrafos
-  a - links
-  main - sessão principal do site
-  section - sessão
-  footer - rodapé
-
-  ---- 
-  - iniciante: criar um componente chamado footer.jsx contendo um parágrafo "@2026 VG Empregos - todos os direitos reservados" e importá-lo no App.jsx logo abaixo do fechamento da main.
-
-  - intermediário: fazer o componente footer e também criar um componente CompanyProfile.jsx que exiba um titulo H2 (ex: Sobre a empresa) e um parágrafo descritivo ficticio. Adicionar esse componente na tela principal.
-  - Avançado: Construir o layout da JobCard.jsx e do Header.jsx utilizando classes css comuns.
-*/
