@@ -1,15 +1,10 @@
 import enterpriseImage from "../../Assets/ProfileImage.png"
 import moneyImage from "../../Assets/money-square.png"
-import group from "../../Assets/ProfileImage.png"
+
 
 //css
 import './jobCard.css'
 
-const VagasDia = () => {
-  return (
-    <h2>Vagas do dia</h2>
-  )
-}
 const JobCard = ({ infoCard }) => {
   return (
         <section className="jobCard">
@@ -20,7 +15,7 @@ const JobCard = ({ infoCard }) => {
             <p>R${infoCard.salary}</p>
           </div>
           <div className="infoJob">
-            <img src={group} alt="" />
+            <img src={enterpriseImage} alt="" />
             <p>{infoCard.location}</p>
           </div>
           <button>Candidatar-se</button>

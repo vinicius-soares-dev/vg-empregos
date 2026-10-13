@@ -2,7 +2,7 @@ import passWIcon from '../../Assets/passwordIcon.png'
 import user from '../../Assets/User.png'
 import { Link } from 'react-router-dom'
 
-import './Login.css'
+import './auth.css'
 
 export default function Login() {
     return (

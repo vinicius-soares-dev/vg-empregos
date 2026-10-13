@@ -1,7 +1,7 @@
 import passWIcon from '../../Assets/passwordIcon.png'
 import user from '../../Assets/User.png'
 import { Link } from 'react-router-dom'
-import '../Login/Login.css'
+import '../Login/auth.css'
 
 export default function Register() {
     return (
