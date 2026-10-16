@@ -12,7 +12,6 @@ function App() {
       <section>
         <Header />
         <main>
-          <Carroussel/>
           <Routes>
             <Route path="/" element={<JobOfTheDayPage />} />
             <Route path="/login" element={<Login />} />
