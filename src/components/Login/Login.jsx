@@ -1,53 +1,90 @@
-import passWIcon from '../../Assets/passwordIcon.png'
-import user from '../../Assets/User.png'
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import passWIcon from "../../Assets/passwordIcon.png";
+import user from "../../Assets/User.png";
 
-import './Login.css'
+import "./Login.css";
 
 export default function Login() {
-    return (
-        <section className="login">
-            <div className="containerLogin">
-                <h2 className="loginTitle">Acesse sua conta</h2>
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
 
-                <div className="loginField">
-                    <p className="loginLabel">E-mail ou nome de usuário</p>
+  const navigate = useNavigate();
 
-                    <div className="inputContainer">
-                        <img src={user} alt="" />
-                        <input
-                            className="loginInput"
-                            type="email"
-                            placeholder="Digite seu e-mail"
-                        />
-                    </div>
-                </div>
+  const handleLogin = async (e) => {
+    e.preventDefault();
 
-                <div className="loginField">
-                    <p className="loginLabel">Senha</p>
+    try {
+      const resposta = await fetch("http://localhost:3333/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, senha }),
+      });
 
-                    <div className="inputContainer">
-                        <img src={passWIcon} alt="" />
-                        <input
-                            className="loginInput"
-                            type="password"
-                            placeholder="Digite sua senha"
-                        />
-                    </div>
-                </div>
+      const dados = await resposta.json();
 
-                <button className="loginButton">Entrar</button>
+      if (!resposta.ok) {
+        throw new Error(dados.erro || "Falha no login.");
+      }
+      localStorage.setItem("vgjobs_user", JSON.stringify(dados.usuario));
+      alert(`Bem-vindo, ${dados.usuario.nome}!`);
+      if (dados.usuario.tipoUsuario === "empresa") {
+        navigate("/dashboard-empresa");
+      } else {
+        navigate("/");
+      }
+    } catch (error) {
+      console.error(error);
+      alert(error.message);
+    }
+  };
 
-                <a className="loginForgotPassword" href="">
-                    Esqueceu a senha?
-                </a>
+  return (
+    <section className="login">
+      <div className="containerLogin">
+        <h2 className="loginTitle">Acesse sua conta</h2>
 
-                <p className="loginRegister">
-                    Não tem uma conta?
-                    <a className="loginRegisterLink" href="">
-                        Cadastre-se
-                    </a>
-                </p>
+        <form onSubmit={handleLogin} className="loginForm">
+          <div className="loginField">
+            <p className="loginLabel">E-mail</p>
+            <div className="inputContainer">
+              <img src={user} alt="" />
+              <input
+                className="loginInput"
+                type="email"
+                placeholder="Digite seu e-mail"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
             </div>
-        </section>
-    );
+          </div>
+
+          <div className="loginField">
+            <p className="loginLabel">Senha</p>
+            <div className="inputContainer">
+              <img src={passWIcon} alt="" />
+              <input
+                className="loginInput"
+                type="password"
+                placeholder="Digite sua senha"
+                value={senha}
+                onChange={(e) => setSenha(e.target.value)}
+              />
+            </div>
+          </div>
+
+          <button type="submit" className="loginButton">
+            Entrar
+          </button>
+
+          <p className="loginRegister">
+            Não tem uma conta?
+            <Link to="/cadastro" className="loginRegisterLink">
+              Cadastre-se
+            </Link>
+          </p>
+        </form>
+      </div>
+    </section>
+  );
 }
