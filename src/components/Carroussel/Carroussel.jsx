@@ -58,7 +58,7 @@ export default function Carroussel() {
                     <SwiperSlide key={item.id}>
                         <img
                             src={item.image}
-                            alt={`Banner de oportunidades ${item.id}`}
+                            alt="Banners"
                             className="banner-image"
                         />
                     </SwiperSlide>
