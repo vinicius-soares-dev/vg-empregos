@@ -4,6 +4,7 @@ import JobOfTheDayPage from "./components/JobsOfTheDay/JobOfTheDayPage";
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
 import CompanyDashboard from "./components/Dashboard/CompanyDashboard";
+import Carroussel from "./components/Carroussel/Carroussel";
 
 function App() {
   return (
