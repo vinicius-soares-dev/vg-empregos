@@ -1,0 +1,110 @@
+.dashboard-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--border-color, #eeeeee);
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+.dashboard-header h2 {
+  color: var(--text-dark, #333333);
+  margin: 0;
+}
+
+.btn-primary {
+  background-color: var(--primary-color, #357976);
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #2a615e;
+}
+
+.btn-danger {
+  background-color: transparent;
+  color: #d9534f;
+  border: 1px solid #d9534f;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.btn-danger:hover {
+  background-color: #d9534f;
+  color: #ffffff;
+}
+
+.job-form-container {
+  background-color: var(--input-bg, #f9f9f9);
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color, #cccccc);
+  margin-top: 20px;
+}
+
+.job-form-container h3 {
+  margin-top: 0;
+  color: var(--text-dark, #333333);
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-dark, #333333);
+  margin-bottom: 6px;
+}
+
+.form-input,
+.form-textarea {
+  padding: 12px;
+  border: 1px solid var(--border-color, #cccccc);
+  border-radius: 4px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  outline: none;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn-cancel {
+  background-color: transparent;
+  color: var(--text-gray, #666666);
+  border: 1px solid var(--border-color, #cccccc);
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
