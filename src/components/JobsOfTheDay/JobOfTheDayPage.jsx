@@ -33,14 +33,15 @@ export default function JobOfTheDayPage() {
 
       <section
         style={{
-          width: "100%",
+          width: "90%",
           paddingTop: "50px",
           paddingBottom: "50px",
+          margin: "0 auto",
         }}
       >
         <Swiper
           modules={[Autoplay, Pagination, Navigation]}
-          spaceBetween={30}
+          spaceBetween={10}
           slidesPerView={3}
           centeredSlides={false}
           loop={true}
@@ -50,7 +51,7 @@ export default function JobOfTheDayPage() {
           }}
           breakpoints={{
             320: {
-              slidesPerView: 1,
+              slidesPerView: 1.5,
               spaceBetween: 20,
             },
 
@@ -60,7 +61,7 @@ export default function JobOfTheDayPage() {
             },
 
             1024: {
-              slidesPerView: 3,
+              slidesPerView: 4,
               spaceBetween: 30,
             },
           }}
@@ -70,7 +71,7 @@ export default function JobOfTheDayPage() {
               key={item.id}
               style={{
                 display: "flex",
-                justifyContent: "center",
+                justifyContent: "center"
               }}
             >
               <JobCard infoCard={item} />
