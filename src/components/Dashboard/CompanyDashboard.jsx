@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { createPortal } from "react-dom";
+import { FiUsers, FiX, FiDownload, FiMail } from "react-icons/fi";
 import "./CompanyDashboard.css";
 
 export default function CompanyDashboard() {
@@ -9,6 +11,11 @@ export default function CompanyDashboard() {
   const [isCreating, setIsCreating] = useState(false);
   const [editingId, setEditingId] = useState(null);
   const [vagas, setVagas] = useState([]);
+
+  const [selectedJobForCandidates, setSelectedJobForCandidates] =
+    useState(null);
+  const [candidatosLista, setCandidatosLista] = useState([]);
+  const [isLoadingCandidates, setIsLoadingCandidates] = useState(false);
 
   const [formData, setFormData] = useState({
     titulo: "",
@@ -145,17 +152,6 @@ export default function CompanyDashboard() {
       alert(error.message);
     }
   };
-
-  if (!userData || userData.tipoUsuario !== "empresa") {
-    return (
-      <div style={{ textAlign: "center", padding: "50px" }}>
-        <h2>Acesso Negado. Apenas empresas podem acessar.</h2>
-        <button className="btn-primary" onClick={() => navigate("/login")}>
-          Voltar ao Login
-        </button>
-      </div>
-    );
-  }
 
   return (
     <section className="dashboard-container">
@@ -333,6 +329,23 @@ export default function CompanyDashboard() {
                       }}
                     >
                       <button
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "6px",
+                          padding: "6px 12px",
+                          backgroundColor: "#17a2b8",
+                          color: "white",
+                          border: "none",
+                          borderRadius: "4px",
+                          cursor: "pointer",
+                        }}
+                      >
+                        <FiUsers />
+                        Candidatos
+                      </button>
+
+                      <button
                         onClick={() => handleToggleStatus(vaga.id, vaga.status)}
                         style={{
                           padding: "6px 12px",
@@ -382,6 +395,71 @@ export default function CompanyDashboard() {
           </div>
         )}
       </div>
+
+      {selectedJobForCandidates &&
+        createPortal(
+          <div className="candidates-modal-overlay">
+            <div className="candidates-modal-content">
+              <div className="candidates-modal-header">
+                <h3>Candidatos: {selectedJobForCandidates.titulo}</h3>
+                <button
+                  className="close-modal-btn"
+                  onClick={fecharModalCandidatos}
+                >
+                  <FiX size={24} />
+                </button>
+              </div>
+
+              <div className="candidates-modal-body">
+                {isLoadingCandidates ? (
+                  <div className="loading-state">
+                    <p>Buscando candidatos...</p>
+                  </div>
+                ) : candidatosLista.length === 0 ? (
+                  <div className="empty-state">
+                    <FiUsers size={48} color="#ccc" />
+                    <p>Ainda não há candidatos para esta vaga.</p>
+                  </div>
+                ) : (
+                  <ul className="candidates-list">
+                    {candidatosLista.map((candidatura) => (
+                      <li key={candidatura.id} className="candidate-item">
+                        <div className="candidate-info">
+                          <h4>{candidatura.usuario.nome}</h4>
+                          <div className="candidate-contact">
+                            <FiMail />
+                            <span>{candidatura.usuario.email}</span>
+                          </div>
+                          <span className="candidate-doc">
+                            Doc: {candidatura.usuario.documento}
+                          </span>
+                        </div>
+
+                        <div className="candidate-action">
+                          {candidatura.usuario.curriculoUrl ? (
+                            <a
+                              href={candidatura.usuario.curriculoUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="btn-download-resume"
+                            >
+                              <FiDownload /> Ver Currículo
+                            </a>
+                          ) : (
+                            <span className="no-resume-badge">
+                              Sem currículo
+                            </span>
+                          )}
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </div>
+          </div>,
+          document.body,
+        )}
     </section>
   );
 }
